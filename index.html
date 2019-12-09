@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Jogo da Memória</title>
+</head>
+
+<body>
+    <h1 id='titleGame'>Jogo da Memoria</h1>
+    <input id='btn-reset' type='button' onclick='app.startGame()' value='Começar novo jogo'>
+    <div id="tabuleiro"> </div>
+    <script charset="utf8">
+        var app = {
+            nrComponentes: 0
+        };
+        app.getComponente = function(nome) {
+            if (!app[nome]) {
+                app[nome] = {};
+                app[app.nrComponentes++] = nome;
+            }
+            return app[nome];
+        };
+    </script>
+    <script src="script.js" charset="utf8"></script>
+</body>
+
+</html>
